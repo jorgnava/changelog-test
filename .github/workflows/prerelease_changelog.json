@@ -36,20 +36,20 @@
     "ignore"
   ],
   "sort": "ASC",
-  "template": "${{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n${{UNCATEGORIZED}}\n</details>",
+  "template": "\n\n${{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n${{UNCATEGORIZED}}\n</details>",
   "pr_template": "- ${{TITLE}} #${{NUMBER}}",
   "empty_template": "- no changes",
   "label_extractor": [
     {
-      "pattern": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|merge)(\\([a-z ]+\\))?: ([\\w ]+)$",
+      "pattern": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|merge).*",
       "target": "$1",
       "on_property": "title"
     }
   ],
   "transformers": [
     {
-      "pattern": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|merge)(\\([a-z ]+\\))?: ([\\w ]+)$",
-      "target": "- $2: $3"
+      "pattern": ".* ([\\w ]+)",
+      "target": "- $1"
     }
   ],
   "max_tags_to_fetch": 200,
