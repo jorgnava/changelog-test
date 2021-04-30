@@ -19,7 +19,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          toTag: 0.1.4
           configuration: "./.github/workflows/release_changelog.json"
 
       - name: Create Release

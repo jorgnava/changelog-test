@@ -49,7 +49,7 @@
   "transformers": [
     {
       "pattern": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|merge)\\(?([a-z ]+)?\\)?: ([\\w ]+) (#[0-9]+)",
-      "target": "- $2: $3 $4"
+      "target": "- $3 $4"
     }
   ],
   "max_tags_to_fetch": 200,
