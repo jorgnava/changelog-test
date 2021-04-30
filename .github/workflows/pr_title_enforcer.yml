@@ -1,15 +1,15 @@
-name: 'PR Title Enforcer'
+name: 'Pull Requests'
 on:
   pull_request:
     types: [opened, edited, reopened]
 
 
 jobs:
-  title-enforcer:
+  enforce-title:
     runs-on: ubuntu-latest
     steps:
       - name: Enforce conventional commits format for PR title
         uses: deepakputhraya/action-pr-title@master
         with:
-          regex: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([a-z ]+\))?: ([\w ]+)$'
+          regex: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|merge)(\([a-z ]+\))?: ([\w ]+)$'
           github_token: ${{ github.token }}

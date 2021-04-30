@@ -1,4 +1,4 @@
-name: 'Changelog Generator'
+name: 'Tags'
 on:
   push:
     tags:
@@ -14,17 +14,16 @@ jobs:
         with:
           fetch-depth: 100
 
-      - name: Build Changelog
+      - name: Build release changelog
         id: github_release
         uses: mikepenz/release-changelog-builder-action@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          toTag: 0.0.4-featureG.1
           configuration: "./.github/workflows/release_changelog.json"
 
   prerelease:
-    if: contains(github.ref, '-') === false
+    if: contains(github.ref, '-') === true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,12 +31,11 @@ jobs:
         with:
           fetch-depth: 100
 
-      - name: Build Changelog
+      - name: Build prerelease changelog
         id: github_release
         uses: mikepenz/release-changelog-builder-action@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          toTag: 0.0.4-featureG.1
           configuration: "./.github/workflows/prerelease_changelog.json"
 

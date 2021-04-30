@@ -1,16 +1,35 @@
 {
   "categories": [
     {
-      "title": "## 🚀 Features",
-      "labels": [".*"]
+      "title": "Nuevo",
+      "labels": [
+        "feat"
+      ]
     },
     {
-      "title": "## 🐛 Fixes",
-      "labels": ["fix"]
+      "title": "Correcciones",
+      "labels": [
+        "fix"
+      ]
     },
     {
-      "title": "## 🧪 Tests",
-      "labels": ["test"]
+      "title": "Tests",
+      "labels": [
+        "test"
+      ]
+    },
+    {
+      "title": "Otros",
+      "labels": [
+        "build",
+        "chore",
+        "ci",
+        "docs",
+        "perf",
+        "refactor",
+        "revert",
+        "style"
+      ]
     }
   ],
   "ignore_labels": [
@@ -22,9 +41,15 @@
   "empty_template": "- no changes",
   "label_extractor": [
     {
-      "pattern": ".*(feature|fix|test).*",
+      "pattern": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|merge)(\\([a-z ]+\\))?: ([\\w ]+)$",
       "target": "$1",
       "on_property": "title"
+    }
+  ],
+  "transformers": [
+    {
+      "pattern": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|merge)(\\([a-z ]+\\))?: ([\\w ]+)$",
+      "target": "- $2: $3"
     }
   ],
   "max_tags_to_fetch": 200,
