@@ -36,7 +36,7 @@
     "ignore"
   ],
   "sort": "ASC",
-  "template": "\n\n${{CHANGELOG}}\n\n<details>\n## Uncategorized\n\n${{UNCATEGORIZED}}\n",
+  "template": "\n\n${{CHANGELOG}}\n\n${{UNCATEGORIZED}}\n",
   "pr_template": "${{TITLE}} #${{NUMBER}}",
   "empty_template": "",
   "label_extractor": [

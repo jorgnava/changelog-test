@@ -1,25 +1,25 @@
 {
   "categories": [
     {
-      "title": "### Nuevo",
+      "title": "## Nuevo",
       "labels": [
         "feat"
       ]
     },
     {
-      "title": "### Correcciones",
+      "title": "## Correcciones",
       "labels": [
         "fix"
       ]
     },
     {
-      "title": "### Tests",
+      "title": "## Tests",
       "labels": [
         "test"
       ]
     },
     {
-      "title": "### Otros",
+      "title": "## Otros",
       "labels": [
         "build",
         "chore",
@@ -36,9 +36,9 @@
     "ignore"
   ],
   "sort": "ASC",
-  "template": "\n\n${{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n${{UNCATEGORIZED}}\n</details>",
-  "pr_template": "- ${{TITLE}} #${{NUMBER}}",
-  "empty_template": "- no changes",
+  "template": "\n\n${{CHANGELOG}}\n\n${{UNCATEGORIZED}}\n",
+  "pr_template": "${{TITLE}} #${{NUMBER}}",
+  "empty_template": "",
   "label_extractor": [
     {
       "pattern": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|merge).*",
@@ -48,8 +48,8 @@
   ],
   "transformers": [
     {
-      "pattern": ".* ([\\w ]+)",
-      "target": "- $1"
+      "pattern": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|merge)\\(?([a-z ]+)?\\)?: ([\\w ]+) (#[0-9]+)",
+      "target": "- $2 $3 $4"
     }
   ],
   "max_tags_to_fetch": 200,
