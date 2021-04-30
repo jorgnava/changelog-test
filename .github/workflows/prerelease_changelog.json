@@ -2,7 +2,7 @@
   "categories": [
     {
       "title": "## 🚀 Features",
-      "labels": ["feature"]
+      "labels": [".*"]
     },
     {
       "title": "## 🐛 Fixes",
@@ -27,19 +27,11 @@
       "on_property": "title"
     }
   ],
-  "transformers": [
-    {
-      "pattern": "[\\-\\*] (\\[(...|TEST|CI|SKIP)\\])( )?(.+?)\n(.+?[\\-\\*] )(.+)",
-      "target": "- $4\n  - $6"
-    }
-  ],
   "max_tags_to_fetch": 200,
   "max_pull_requests": 200,
   "max_back_track_time_days": 365,
-  "exclude_merge_branches": [
-    "Owner/qa"
-  ],
   "tag_resolver": {
     "method": "semver"
-  }
+  },
+  "base_branches": ["feature"]
 }
