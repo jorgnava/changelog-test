@@ -1,3 +1,4 @@
+name: 'PR Title Enforcer'
 on:
   pull_request:
     types: [opened, edited, synchronize, reopened]
