@@ -6,7 +6,7 @@ on:
 
 jobs:
   release:
-    if: contains(github.ref, '-') === false
+    if: "!contains(github.ref, '-')"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,7 +23,7 @@ jobs:
           configuration: "./.github/workflows/release_changelog.json"
 
   prerelease:
-    if: contains(github.ref, '-') === true
+    if: contains(github.ref, '-')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

@@ -1,25 +1,25 @@
 {
   "categories": [
     {
-      "title": "Nuevo",
+      "title": "### Nuevo",
       "labels": [
         "feat"
       ]
     },
     {
-      "title": "Correcciones",
+      "title": "### Correcciones",
       "labels": [
         "fix"
       ]
     },
     {
-      "title": "Tests",
+      "title": "### Tests",
       "labels": [
         "test"
       ]
     },
     {
-      "title": "Otros",
+      "title": "### Otros",
       "labels": [
         "build",
         "chore",
